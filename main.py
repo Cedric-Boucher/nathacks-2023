@@ -2,6 +2,8 @@ import argparse
 import time
 
 from pprint import pprint
+import matplotlib.pyplot as plt
+import numpy as np
 from brainflow.board_shim import BoardShim, BrainFlowInputParams, BoardIds, BrainFlowPresets
 
 
@@ -20,16 +22,29 @@ def main():
     board = getBoardShim()
 
     board.prepare_session()
+    input("Press Enter to Start Stream")
     board.start_stream()
-    time.sleep(1)
+    timeStart = time.time()
     # data = board.get_current_board_data (256) # get latest 256 packages or less, doesnt remove them from internal buffer
-    data = board.get_board_data(100)  # get all data and remove it from internal buffer
+    input("Press Enter to Stop Stream")
+    timeDelta = time.time() - timeStart
+    data = board.get_board_data(timeDelta * 256)  # get all data and remove it from internal buffer
     board.stop_stream()
     board.release_session()
 
     print(data)
     print(data.shape)
 
+    descriptor = BoardShim.get_board_descr(BoardIds.MUSE_2_BOARD)
+    pprint(descriptor)
+
+    plt.plot(data[6], data[1])
+    plt.plot(data[6], data[2])
+    plt.plot(data[6], data[3])
+    plt.plot(data[6], data[4])
+    plt.legend(descriptor["eeg_names"].split(","))
+    plt.show()
+    
 
 if __name__ == "__main__":
     main()
