@@ -1,3 +1,8 @@
+# Nat Hacks 2023
+## Dependencies
+ + brainflow
+ + matplotlib
+
 # Muse 2 Notes
 ## Brainflow Library
 
