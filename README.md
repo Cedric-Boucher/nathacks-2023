@@ -1,7 +1,27 @@
 # Nat Hacks 2023
+## Focus Assistant Real Time 
+A application which collects EEG data through a Muse 2 and produces customize pomodoro sessions.
+
 ## Dependencies
- + brainflow
- + matplotlib
+ + python (>=3.11.6)
+ + numpy (1.26.2)
+ + brainflow (5.10.1)
+ + matplotlib (1.26.2)
+
+## How to Run (Windows 11)
+```bash
+git clone https://github.com/D3Zyre/nathacks-2023.git
+cd ./nathacks-2023/
+python -m venv .venv
+cd .venv/Scripts && activate.bat && cd ../..
+python -m pip install -r requirements.txt
+python src/main.py
+```
+
+## TODO List
+ + [ ] Muse 2 data collection.
+ + [ ] Design and Develop GUI.
+ + [ ] Develop algorithm using Muse data.
 
 # Muse 2 Notes
 ## Brainflow Library
