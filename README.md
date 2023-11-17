@@ -9,6 +9,7 @@ A application which collects EEG data through a Muse 2 and produces customize po
  + matplotlib (1.26.2)
 
 ## How to Run (Windows 11)
+For Windows 11
 ```bash
 git clone https://github.com/D3Zyre/nathacks-2023.git
 cd ./nathacks-2023/
