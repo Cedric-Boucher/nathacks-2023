@@ -56,7 +56,7 @@ The classic 40:20 study break ratio, but with a twist. We will look at the users
 
 #### Why we choose this idea:
 
-We choose this idea because of many things. We could probably use the hardware we had to actually implement this, the Muse 2 has enough channels to accurately determine focus. This project has enough complexity to keep us all busy; getting the data from the Muse 2, processing the data, determining the length of the next session, and of course the app that the user interacts with. These are the main reasons we choose this idea
+We choose this idea because of many things. We could probably use the hardware we had to actually implement this, the Muse 2 has enough channels to accurately determine focus. This project has enough complexity to keep us all busy; getting the data from the Muse 2, processing the data, determining the length of the next session, and of course the app that the user interacts with. These are the main reasons we choose this idea.
 
 ### Emotionally Intelligent Chatbot (using chat gpt)
 
