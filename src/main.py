@@ -25,7 +25,6 @@ def main():
     input("Press Enter to Start Stream")
     board.start_stream()
     timeStart = time.time()
-    # data = board.get_current_board_data (256) # get latest 256 packages or less, doesnt remove them from internal buffer
     input("Press Enter to Stop Stream")
     timeDelta = time.time() - timeStart
     data = board.get_board_data(timeDelta * 256)  # get all data and remove it from internal buffer
