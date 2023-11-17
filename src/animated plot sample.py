@@ -7,9 +7,10 @@ subplot = fig.add_subplot(1,1,1)
 x = numpy.array([])
 y = numpy.array([])
 
-def animate(i):
+def animate(i, x1, y1, z, w):
     global x
     global y
+    print(x1, y1, z, w)
     new_x = numpy.arange(i, i+1)
     new_y = numpy.random.random(1)
     x = numpy.append(x, new_x)
@@ -17,5 +18,5 @@ def animate(i):
     subplot.clear()
     subplot.plot(x, y)
 
-ani = animation.FuncAnimation(fig, animate, interval=100)
+ani = animation.FuncAnimation(fig, animate, fargs = (1, 2, 3, 4), interval=100)
 plt.show()
