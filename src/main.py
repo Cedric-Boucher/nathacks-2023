@@ -10,7 +10,7 @@ from brainflow.board_shim import BoardShim, BrainFlowInputParams, BoardIds, Brai
 # Initialize BoardShim object to connect to Muse 2 device.
 def getBoardShim():
     params = BrainFlowInputParams()
-    params.mac_address = "00:55:da:b5:c9:df"
+    params.mac_address = "00:55:da:b5:c9:df".upper()
     boardId = BoardIds.MUSE_2_BOARD
     board = BoardShim(boardId, params)
     return board
@@ -38,11 +38,19 @@ def main():
     descriptor = BoardShim.get_board_descr(BoardIds.MUSE_2_BOARD)
     pprint(descriptor)
 
+    plt.figure()
     plt.plot(data[6], data[1])
     plt.plot(data[6], data[2])
     plt.plot(data[6], data[3])
     plt.plot(data[6], data[4])
     plt.legend(descriptor["eeg_names"].split(","))
+    plt.figure()
+    frequency = np.arange(-np.fft.fft(data[1]).shape[0]/2, np.fft.fft(data[1]).shape[0]/2) / timeDelta
+    plt.plot(frequency, np.fft.fft(data[1]))
+    plt.plot(frequency, np.fft.fft(data[2]))
+    plt.plot(frequency, np.fft.fft(data[3]))
+    plt.plot(frequency, np.fft.fft(data[4]))
+    plt.legend([i+" fft" for i in descriptor["eeg_names"].split(",")])
     plt.show()
     
 
