@@ -8,16 +8,6 @@ from brainflow.board_shim import BoardShim, BrainFlowInputParams, BoardIds, Brai
 from muse import Muse, Data
 
 
-def plotData(eegData):
-    data = eegData.getAllData()
-    plt.plot(data[0], data[2])
-    plt.plot(data[0], data[3])
-    plt.plot(data[0], data[4])
-    plt.plot(data[0], data[5])
-    plt.legend(Muse.EEG_NAMES)
-    plt.show()
-
-
 def main():
     BoardShim.enable_dev_board_logger()
 
